@@ -137,6 +137,9 @@ class EnumerateHeadingsPlugin(BasePlugin):
             else:
                 chapter = markdown_files_processed[page.file.abs_src_path]
 
+            if 'chapter' in page.meta:
+                chapter = int(page.meta['chapter'])
+
             page.chapter = chapter
 
     def on_post_page(self, output, page, config, **kwargs):

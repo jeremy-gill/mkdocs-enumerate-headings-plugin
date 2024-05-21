@@ -84,6 +84,10 @@ class Heading:
         if "." not in heading_string:
             heading_string += "."
 
+        # allow a page to disable numbering
+        if self.section_numbering[0] < 0:
+            heading_string = ""
+
         return heading_string
 
     def enumerate(self, add_span_element=False):
